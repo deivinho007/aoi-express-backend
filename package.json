@@ -1,7 +1,7 @@
 {
   "name": "api-express-back",
   "version": "1.0.0",
-  "description": "- npm init // cria o package.json para iniciar um projeto node \r - npm i nome_pacote // instala um pacote especifico \r - npm install ou npm i // instala todos os pacotes do package.json",
+  "description": "Projeto de exemplo para aprender sobre Express e Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
