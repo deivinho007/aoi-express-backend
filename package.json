@@ -2,9 +2,10 @@
   "name": "api-express-back",
   "version": "1.0.0",
   "description": "Projeto de exemplo para aprender sobre Express e Node.js",
-  "main": "index.js",
+  "main": "src/Server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/Server.js"
+   
   },
   "keywords": [],
   "author": "Deivid Santana",
