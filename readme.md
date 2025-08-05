@@ -38,3 +38,4 @@
 - put // atualizar todos os dados
 - patch // atualizar parcialmente alguns dados NÃO TODOS OS DADOS !
 - delete - //  deletar dados 
+- como mudar o modo de importação/exportação de require para import// adicionar no package.json a propriedade "Type" e colocar module = "Type" = 'import'
