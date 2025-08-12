@@ -39,3 +39,29 @@
 - patch // atualizar parcialmente alguns dados NÃO TODOS OS DADOS !
 - delete - //  deletar dados 
 - como mudar o modo de importação/exportação de require para import// adicionar no package.json a propriedade "Type" e colocar module = "Type" = 'import'
+
+
+# importação e exportação 
+- exportação com o defalt é só 1 exportação sem chaves
+- se exporta usando a exportação com chaves pode ser mais de 1 objeto 
+
+- exemplo: export default teste 1 
+- export {texte1,teste2}
+
+
+- a mesma coisa o import = import text = from "./src/texte.js
+- import {texte,text}= from ./src/texte
+
+
+- O QUE É WATCH: toda vez que eu quiser observar um arquivo depois de alterar tipo o 'NODEMON' É no package.json no script em baixo do start você coloca o "dev":"node --watch src/server.js".
+
+- Sintaxe básica de uma Rota API
+
+app.put('/user',(req,res)=>{
+  console.log('editado com sucesso')
+  res.json({user:'usuario editado com sucesso'})
+})
+
+- método criar/inserir:post 
+- Rota ou endereço: /produto
+- tipo de resposta: send ou json
