@@ -13,12 +13,12 @@ app.get('/profile',(req,res)=>{
 
 app.post('/profile', (req, res) => {
   const dados = req.body;
-  res.json({
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify({
     message: 'Usuario Criado',
     profile: dados
-  });
+  }, null, 2)); // <-- identação de 2 espaços
 });
-
 
 app.put('/profile',(req,res)=>{
 const dados = req.body
