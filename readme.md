@@ -65,3 +65,7 @@ app.put('/user',(req,res)=>{
 - método criar/inserir:post 
 - Rota ou endereço: /produto
 - tipo de resposta: send ou json
+
+# Para que serve o router do framework do express
+
+-Para melhor organização e melhorar a manutenção do cordigo 

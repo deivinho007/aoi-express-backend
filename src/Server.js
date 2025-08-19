@@ -1,37 +1,18 @@
 import express from 'express'
+import ProfileRouter from './Routers/ProfileRouter.js';
+import ProductRouter from './Routers/ProductRouter.js';
+import supplierRouter from './Routers/supplierRouter.js';
+import carRouter from './Routers/carRouter.js';
 
 const app = express()
-const port = 3000
+const port = 3333
 
-app.use(express.json())
+app.use(express.json()) // converter o json que chegou na requisição em um objeto em Obj
 
-app.get('/profile',(req,res)=>{
-  const dados = req.body
-  console.log(req)
-  res.json({messsage:'Perfil do Usuário'})
-})
-
-app.post('/profile', (req, res) => {
-  const dados = req.body;
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({
-    message: 'Usuario Criado',
-    profile: dados
-  }, null, 2)); // <-- identação de 2 espaços
-});
-
-app.put('/profile',(req,res)=>{
-const dados = req.body
-  res.json({
-    messsage:'Usuario atualizado ',
-    profile: dados
-  })
-})
-
-app.delete('/profile',(req,res)=>{
-  console.log(req)
-  res.json({messsage:'Usuario deletado'})
-})
+app.use('/profile', ProfileRouter);
+app.use('/produto', ProductRouter);
+app.use('/fornecedor', supplierRouter);
+app.use('/car', carRouter);
 
 
 app.listen(port,function(){
