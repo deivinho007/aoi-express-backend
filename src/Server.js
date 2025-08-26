@@ -1,20 +1,32 @@
-import express from 'express'
-import ProfileRouter from './Routers/ProfileRouter.js';
-import ProductRouter from './Routers/ProductRouter.js';
+import express from 'express';
+import profileRouter from './Routers/profileRouter.js';
+import productRouter from './Routers/productRouter.js';
 import supplierRouter from './Routers/supplierRouter.js';
+import customerRouter from './Routers/customerRouter.js';
 import carRouter from './Routers/carRouter.js';
 
-const app = express()
-const port = 3333
+const app = express();
+const port = 3333;
 
-app.use(express.json()) // converter o json que chegou na requisição em um objeto em Obj
+// Middlewares
+app.use(express.json()); // Converter o JSON da requisição em objeto
 
-app.use('/profile', ProfileRouter);
-app.use('/produto', ProductRouter);
-app.use('/fornecedor', supplierRouter);
-app.use('/car', carRouter);
+// Rotas
+app.use('/profiles', profileRouter);    // Padronizando no plural em inglês
+app.use('/products', productRouter);    // Alterado de 'produto' para 'products'
+app.use('/suppliers', supplierRouter);  // Alterado de 'fornecedor' para 'suppliers'
+app.use('/customers', customerRouter);  // Mantendo padrão plural
+app.use('/cars', carRouter);           // Alterado para plural
 
+// Rota de status da API
+app.get('/status', (req, res) => {
+  res.json({
+    status: 'online',
+    timestamp: new Date(),
+    version: '1.0.0'
+  });
+});
 
-app.listen(port,function(){
-  console.log(`Servidor rodando na porta ${port}`)
-})
+app.listen(port, () => {
+  console.log(`Servidor rodando na porta ${port}`);
+});

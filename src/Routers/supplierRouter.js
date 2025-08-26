@@ -1,41 +1,16 @@
 import express from 'express';
+import createSupplierController from '../controller/supplier/createSupplierController.js';
+import listSupplierController from '../controller/supplier/listSupplierController.js';
+import getByIdSupplierController from '../controller/supplier/getByIdSupplierController.js';
+import putByIdSupplierController from '../controller/supplier/putByIdSupplierController.js';
+import deleteSupplierController from '../controller/supplier/deleteSupplierController.js';
 
 const router = express.Router();
 
-router.get('/',(req,res)=>{
-  const dados = req.body
-  console.log(dados)
-  res.json({messsage:'Perfil do fornecedor'})
-})
-
-router.get('//:id',(req,res)=>{
-  const dados = req.body
-  console.log(dados)
-  res.json({messsage:'Perfil do Fornecedor'})
-})
-
-
-router.post('/', (req, res) => {
-  const dados = req.body;
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({
-    message: 'Fornecedor Criado',
-    profile: dados
-  }, null, 2)); // <-- identação de 2 espaços
-});
-
-router.put('//:id',(req,res)=>{
-const dados = req.body
-  res.json({
-    messsage:'Fornecedor atualizado ',
-    profile: dados
-  })
-})
-
-router.delete('//:id',(req,res)=>{
-  const id = req.params.id
-  console.log(id)
-  res.json({messsage:`Fornecedor ${id} deletado`})
-})
+router.get('/', listSupplierController);
+router.get('/:id', getByIdSupplierController);
+router.post('/', createSupplierController);
+router.put('/:id', putByIdSupplierController);
+router.delete('/:id', deleteSupplierController);
 
 export default router;

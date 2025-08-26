@@ -68,4 +68,17 @@ app.put('/user',(req,res)=>{
 
 # Para que serve o router do framework do express
 
--Para melhor organização e melhorar a manutenção do cordigo 
+- Para melhor organização e melhorar a manutenção do cordigo 
+
+# MVC 
+
+- Padrão de Projeto// é uma forma fazer codigos e é muito conhecida
+- Mvc / padrão do projeto e organiza os codigos em 3 camadas para melhor manutenção
+
+- MVC //  Model, View , Controller 
+
+- Model // acesso ao banco de dados e regras do Projeto 
+
+- View // camada de apresentação ou interface - geralmente o front usa
+
+- Controller// controla a entrada do dados, processa os dados, e a saida dos dados - rertonar a mensagem do usuario 
