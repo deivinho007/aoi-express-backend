@@ -1,5 +1,9 @@
-export default function listProfileController(req, res) {
-  const dados = req.body;
-  console.log(dados);
-  res.json({ message: 'Lista de Perfis' });
+import { list } from "../../model/profileModel.js";
+
+export  const  listProfileController = async(req, res) => {
+  const result = await list();
+  res.json({
+    message:'Usúarios listados com sucesso',
+    profiles: result
+  })
 }

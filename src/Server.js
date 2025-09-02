@@ -12,7 +12,7 @@ const port = 3333;
 app.use(express.json()); // Converter o JSON da requisição em objeto
 
 // Rotas
-app.use('/profiles', profileRouter);    // Padronizando no plural em inglês
+app.use('/profile', profileRouter);    // Padronizando no plural em inglês
 app.use('/products', productRouter);    // Alterado de 'produto' para 'products'
 app.use('/suppliers', supplierRouter);  // Alterado de 'fornecedor' para 'suppliers'
 app.use('/customers', customerRouter);  // Mantendo padrão plural

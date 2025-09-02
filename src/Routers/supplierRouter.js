@@ -13,4 +13,4 @@ router.post('/', createSupplierController);
 router.put('/:id', putByIdSupplierController);
 router.delete('/:id', deleteSupplierController);
 
-export default router;
+export default router; 
