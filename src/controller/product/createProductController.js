@@ -1,8 +1,10 @@
-export default function createProductController(req, res) {
-    const dados = req.body;
-    res.json({
-        message: 'Produto criado com sucesso',
-        product: dados
+import { create } from '../../model/productModel.js';
+
+export const createProductController = async (req, res) => {
+    const profile = req.body;
+    const result = await create(profile);
+    res.status(201).json({
+        message: 'produto criado com sucesso',
+        profile: result
     });
 }
-

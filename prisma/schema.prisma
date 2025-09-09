@@ -13,4 +13,13 @@ model user {
   name  String @db.VarChar(100)
   email String @unique(map: "email") @db.VarChar(100)
   pass  String @db.VarChar(255)
+  avatar String? @db.Text
+}
+
+model product{
+ id   Int    @id @default(autoincrement())
+ nome String @db.VarChar(100)
+ descrição String @db.Text
+ preço Float @db.Float
+ imagem String? @db.Text
 }

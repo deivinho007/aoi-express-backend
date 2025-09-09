@@ -96,7 +96,8 @@ app.put('/user',(req,res)=>{
 
 - Instalação prisma
    - npm i -D
-   - npm i @prism
+   - npm i @prisma/client
+   
 
 - Inicializar o prisma
    - npx prisma init

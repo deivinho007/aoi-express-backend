@@ -1,6 +1,9 @@
-export default function listProductController(req, res) {
-    res.json({
-        message: 'Lista de produtos',
-        products: []
-    });
+import { list } from "../../model/productModel.js";
+
+export  const  listProductController = async(req, res) => {
+  const result = await list();
+  res.json({
+    message:'Usúarios listados com sucesso',
+    profiles: result
+  })
 }

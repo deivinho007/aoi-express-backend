@@ -1,9 +1,9 @@
 import express from 'express';
-import {createProfileController} from '../controller/profile/createProfileController.js';
-import listProfileController  from '../controller/profile/listProfileController.js';
-import getByIdProfileController from '../controller/profile/getByIdProfileController.js';
-import putByIdProfileController from '../controller/profile/putByIdProfileController.js';
-import deleteProfileController from '../controller/profile/deleteProfileController.js';
+import { createProfileController } from '../controller/profile/createProfileController.js';
+import { listProfileController } from '../controller/profile/listProfileController.js';
+import { getByIdProfileController } from '../controller/profile/getByIdProfileController.js';
+import { putByIdProfileController } from '../controller/profile/putByIdProfileController.js';
+import { deleteProfileController } from '../controller/profile/deleteProfileController.js';
 
 const router = express.Router();
 

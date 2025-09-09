@@ -1,5 +1,10 @@
-export default function deleteProfileController(req, res) {
+import { remove } from '../../model/profileModel.js'
+
+export const deleteProfileController = async (req, res) => {
   const id = req.params.id;
-  console.log(id);
-  res.json({ message: `Usuario ${id} deletado` });
+  const result = await remove(+id)
+  res.json({
+    message: `Usuario ${id} deletado`,
+    Profile: result
+  });
 }
