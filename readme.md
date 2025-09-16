@@ -106,7 +106,17 @@ app.put('/user',(req,res)=>{
    - npx prisma db pull
 
 - Gerar o BD a partir de um model
-   - npx prisma db pull
+   - npx prisma db push
 
 - Gerar os arquivos necessarios para usar o prisma client no codigo
    - npx prisma generate 
+
+   ### Middleware
+
+   - tudo que tem res e req é um Middleware
+
+   - padrão de projeto middleware usado pelo express que divide o codigo em funções que são chamadas de middleware execuções 
+
+   - ele usa 2 funções como req e res onde ele manda para os middlewares e adiciona um body req.body e passa para os outros middlewares em sequencia e todos fazem a mesma função recebendo o req e o res menos o final que da a resposta
+
+   - Todos os middlewares recebem, por padrão: (req, res, next) => { ... }
