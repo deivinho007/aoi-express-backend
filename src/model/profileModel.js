@@ -13,7 +13,7 @@ export const update = async (id, profile) => {
     return await prisma.user.update({
         where: { id },
         data: profile,
-         select: {id: true,name: true,email: true,avatar: true}
+        select: { id: true, name: true, email: true, avatar: true }
     })
 }
 
@@ -30,6 +30,20 @@ export const getById = async (id) => {
         select: { id: true, name: true, email: true, avatar: true }
     })
 }
+
+export const getEmail = async (id) => {
+    return await prisma.user.findUnique({
+        where: { id: Number(id) }
+    })
+}
+
+export const getByEmail = async (email) => {
+    return await prisma.user.findUnique({
+        where: { email },
+    })
+}
+
+
 
 export const remove = async (id) => {
     return await prisma.user.delete({
