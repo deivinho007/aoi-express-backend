@@ -4,12 +4,14 @@ import { listProfileController } from '../controller/profile/listProfileControll
 import { getByIdProfileController } from '../controller/profile/getByIdProfileController.js';
 import { putByIdProfileController } from '../controller/profile/putByIdProfileController.js';
 import { deleteProfileController } from '../controller/profile/deleteProfileController.js';
+import {authenticator} from "../middleware/authenticator.js";
 
 const router = express.Router();
 
 router.get('/', listProfileController);
 router.get('/:id/:name', getByIdProfileController);
 router.post('/', createProfileController);
+router.use(authenticator)
 router.put('/:id', putByIdProfileController);
 router.delete('/:id', deleteProfileController);
 

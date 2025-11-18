@@ -194,3 +194,9 @@ o prisma da ferramentas para criar o
 - padrão de projeto usado no express que divide o codigo em funções que são chamadas de middlewares, e toda vez que ele termina de fazer o que tem que fazer, ele passa pro proximo
 
 é uma forma de organizar o codigo onde cada função segue o fluxo
+
+# JWT Secret 
+
+- Dados que vai no token se chama payload 
+
+- se eu mudar o segredo do JWT segredo, as pessoas que estavam logadas antes não vão ter acesso e vão ser derrubadas do sistema 
