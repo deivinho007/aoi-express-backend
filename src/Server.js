@@ -7,6 +7,8 @@ import customerRouter from './Routers/customerRouter.js';
 import carRouter from './Routers/carRouter.js';
 import { logger } from './middleware/Logger.js';
 import cors from 'cors';
+import { errorHandler } from './middleware/errorHandler.js';
+import { notFoundError } from './controller/notFoundError.js';
 
 const app = express();
 const port = 3333;
@@ -24,7 +26,11 @@ app.use('/profile', profileRouter);    // Padronizando no plural em inglês
 app.use('/product', productRouter);    // Alterado de 'produto' para 'products'
 app.use('/suppliers', supplierRouter);  // Alterado de 'fornecedor' para 'suppliers'
 app.use('/customers', customerRouter);  // Mantendo padrão plural
-app.use('/cars', carRouter);           // Alterado para plural
+app.use('/cars', carRouter); 
+ 
+// Middleware para rotas não encontradas (deve ser um dos últimos)
+app.all(notFoundError);
+app.use(errorHandler)
 
 // Rota de status da API
 app.get('/status', (req, res) => {
