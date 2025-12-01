@@ -200,3 +200,41 @@ o prisma da ferramentas para criar o
 - Dados que vai no token se chama payload 
 
 - se eu mudar o segredo do JWT segredo, as pessoas que estavam logadas antes não vão ter acesso e vão ser derrubadas do sistema 
+
+------
+## Revisão para segunda prova
+
+- Autentificação e Login de Usúario
+   - Como salvar a senha BD de forma segura? : Salvar como hash (bcrypt)
+
+   - Autenticação (Login), o que verificar e fazer no login? verificar se os dados batem com o de cadastro, se bater gerar um token para o user 
+   
+   - JWT 
+    - qual o significado de JWT: Json Web Token
+    - O que o token armazena: guarda informações de quem ta logado 
+    - Quais as vantagens do JWT: o payload fica gravado no token e vem assinado assim o meu back sabe que ele que assinou
+    - backend não precisa consultar o BD 
+    - Amplamente conhecido e com bibliotecas disponiveis
+    - como é enviado o token para o backend: por meio do  Header Authorization, da requisição HTTP.
+
+- Validação de dados  ( Regra de Negócio) com zod 
+
+ - o que é o zod = O Zod é uma biblioteca de declaração e validação de schemas (esquemas) para TypeScript/JavaScript, muito popular no desenvolvimento moderno
+
+ - para o que serve o zod = criar as regras de negocio, estabelecendo regras de validação para cada um dos campos do meu modelo 
+
+ - para que serve o partial: para o zod deixar opcional algum campo que não é necessario 
+
+ - vantagens do zod =  poder dar mensagens de erro personalizadas 
+
+- ErroHandler (midleware para tratamento de erros da API)
+  - Para que serve o error Handle = Para capiturar os erros e facilitar a manutenção
+
+  - da mensagens de erros para o servidor
+
+  - dar mensagem amigavel de erro para o user 
+   
+  - não derrubar o sistema 
+
+  -  
+

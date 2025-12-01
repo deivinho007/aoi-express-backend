@@ -16,5 +16,3 @@ export const authenticator = (req, res, next) => {
     }
 next();
 }
-
-
